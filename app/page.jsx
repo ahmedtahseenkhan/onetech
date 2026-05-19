@@ -483,46 +483,6 @@ function Certifications() {
             </div>
           ))}
         </div>
-
-        <div className="affil-row">
-          <span className="affil-label">/ Affiliations</span>
-          {affiliations.map(([name, sub]) => (
-            <div key={name} className="affil-item">
-              <span className="affil-name">{name}</span>
-              <span className="affil-sub">{sub}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Partners Marquee ─── */
-function Partners() {
-  const partners = [
-    'Schneider Electric', 'Siemens', 'Honeywell', 'ABB', 'Cisco', 'APC', 'Vertiv',
-    'Xtralis', 'ViRDI', 'ATTOM', 'Skyworth', 'Kansai', 'Legrand', 'CommScope',
-  ];
-  const doubled = [...partners, ...partners];
-
-  return (
-    <section className="partners" aria-label="Technology partners">
-      <div className="wrap">
-        <div className="partners-header">
-          <h3>Specified vendors &amp; technology partners</h3>
-          <span>{partners.length} active partnerships</span>
-        </div>
-      </div>
-      <div className="marquee" aria-hidden="true">
-        <div className="marquee-track">
-          {doubled.map((p, i) => (
-            <span key={i} className="partner-item">
-              <span className="partner-dot" />
-              {p}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );
@@ -652,7 +612,6 @@ export default function Home() {
         <WhyOneTech />
         <Certifications />
         <LogosSection />
-        <Partners />
         <Locations />
         <CTA />
       </main>
