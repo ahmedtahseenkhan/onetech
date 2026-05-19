@@ -1459,15 +1459,192 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .value-card p { font-size: 0.875rem; color: var(--text-2); line-height: 1.65; }
 
+/* ─────────── LOGOS / TRUST SECTION ─────────── */
+.logos-section {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 72px 0;
+}
+.logos-section.cream { background: var(--cream); }
+
+.logos-group { margin-bottom: 56px; }
+.logos-group:last-child { margin-bottom: 0; }
+
+.logos-group-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.logos-group-label {
+  font-family: var(--f-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber-dark);
+  white-space: nowrap;
+}
+.logos-group-divider {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.logos-group-count {
+  font-family: var(--f-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Logo grid for Affiliations & Accreditations */
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 72px;
+  padding: 12px 24px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.logos-section.cream .logo-item { background: var(--white); }
+.logo-item:hover {
+  border-color: rgba(244,179,36,0.4);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+.logo-item img {
+  max-height: 44px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.2s, opacity 0.2s;
+  display: block;
+}
+.logo-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Accreditation logos are horizontal banners */
+.logo-item.accredd {
+  height: 64px;
+  padding: 10px 20px;
+}
+.logo-item.accredd img { max-height: 40px; max-width: 160px; }
+
+/* Client logos — larger and more prominent */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.client-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  padding: 20px 28px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all 0.22s;
+  cursor: pointer;
+}
+.logos-section.cream .client-card { background: var(--white); }
+.client-card:hover {
+  border-color: rgba(244,179,36,0.4);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+.client-card img {
+  max-height: 72px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: filter 0.2s, opacity 0.2s;
+  display: block;
+}
+.client-card:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Associations — scrolling marquee */
+.assoc-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+}
+.assoc-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: assocScroll 50s linear infinite;
+  align-items: center;
+}
+.assoc-marquee:hover .assoc-track { animation-play-state: paused; }
+@keyframes assocScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.assoc-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  padding: 10px 20px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.logos-section.cream .assoc-logo { background: var(--white); }
+.assoc-logo:hover { border-color: rgba(244,179,36,0.4); }
+.assoc-logo img {
+  max-height: 42px;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: filter 0.2s, opacity 0.2s;
+  display: block;
+}
+.assoc-logo:hover img { filter: grayscale(0%); opacity: 1; }
+
 /* ─────────── RESPONSIVE additions ─────────── */
 @media (max-width: 900px) {
   .contact-layout { grid-template-columns: 1fr; }
   .about-story { grid-template-columns: 1fr; gap: 40px; }
   .values-grid { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .about-stats-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 24px; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+  .logo-grid { gap: 10px; }
+  .logo-item { padding: 10px 16px; height: 62px; }
 }

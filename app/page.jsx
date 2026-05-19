@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import LogosSection from './components/LogosSection';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Icon } from './components/Icons';
@@ -650,6 +651,7 @@ export default function Home() {
         <CybersecurityPlatform />
         <WhyOneTech />
         <Certifications />
+        <LogosSection />
         <Partners />
         <Locations />
         <CTA />

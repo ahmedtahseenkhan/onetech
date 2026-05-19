@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Icon } from '../components/Icons';
+import LogosSection from '../components/LogosSection';
 
 export const metadata = {
   title: 'About OneTech | 17 Years of Mission-Critical ICT Consultancy',
@@ -190,6 +191,7 @@ export default function AboutPage() {
         <Story />
         <Mission />
         <Certifications />
+        <LogosSection cream />
         <CTA />
       </main>
       <Footer />
