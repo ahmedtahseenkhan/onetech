@@ -1506,6 +1506,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
+  justify-content: center;
 }
 .logo-item {
   display: flex;
@@ -1531,14 +1532,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: filter 0.2s, opacity 0.2s;
   display: block;
-}
-.logo-item:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
 }
 
 /* Accreditation logos are horizontal banners */
@@ -1550,10 +1544,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Client logos — larger and more prominent */
 .clients-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
+.client-card { flex: 0 0 calc(33.333% - 12px); max-width: 360px; }
 .client-card {
   display: flex;
   align-items: center;
@@ -1573,19 +1569,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transform: translateY(-3px);
 }
 .client-card img {
-  max-height: 72px;
+  max-height: 80px;
   max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.65;
-  transition: filter 0.2s, opacity 0.2s;
   display: block;
-}
-.client-card:hover img {
-  filter: grayscale(0%);
-  opacity: 1;
 }
 
 /* Associations — scrolling marquee */
@@ -1625,12 +1614,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.65;
-  transition: filter 0.2s, opacity 0.2s;
   display: block;
 }
-.assoc-logo:hover img { filter: grayscale(0%); opacity: 1; }
 
 /* ─────────── RESPONSIVE additions ─────────── */
 @media (max-width: 900px) {

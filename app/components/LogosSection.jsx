@@ -46,7 +46,6 @@ const ASSOCIATIONS = [
 const CLIENTS = [
   { src: '/logos/client-unnamed-12-2.png', alt: 'OneTech Client' },
   { src: '/logos/client-unnamed-13-2.png', alt: 'OneTech Client' },
-  { src: '/logos/client-unnamed-9-2.jpg',  alt: 'OneTech Client' },
   { src: '/logos/client-unnamed-3-3.jpg',  alt: 'OneTech Client' },
 ];
 
