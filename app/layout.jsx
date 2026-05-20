@@ -1,23 +1,24 @@
-import { Manrope, JetBrains_Mono, Bricolage_Grotesque } from 'next/font/google';
+import { Montserrat, Source_Sans_3, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
-const manrope = Manrope({
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--f-display',
+  display: 'swap',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
   variable: '--f-body',
   display: 'swap',
+  weight: ['300', '400', '600', '700'],
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--f-mono',
   display: 'swap',
-});
-
-const bricolageGrotesque = Bricolage_Grotesque({
-  subsets: ['latin'],
-  variable: '--f-display',
-  display: 'swap',
-  axes: ['opsz', 'wdth'],
 });
 
 export const metadata = {
@@ -175,7 +176,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${jetbrainsMono.variable} ${bricolageGrotesque.variable}`}
+      className={`${montserrat.variable} ${sourceSans.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script
