@@ -80,13 +80,11 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="brand" aria-label="OneTech — home" onClick={closeAll}>
-            <div className="brand-mark">
-              <svg width="22" height="22" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                <rect width="28" height="28" rx="7" fill="#F4B324"/>
-                <text x="14" y="19.5" textAnchor="middle" fontFamily="monospace" fontWeight="700" fontSize="12" fill="#0E2240" letterSpacing="0.5">1T</text>
-              </svg>
-            </div>
-            <div className="brand-name">One<em>Tech</em></div>
+            <img
+              src="/onetech-logo.png"
+              alt="OneTech ICT Consultancy"
+              style={{ height: 44, width: 'auto', display: 'block' }}
+            />
           </Link>
 
           {/* Desktop nav */}
